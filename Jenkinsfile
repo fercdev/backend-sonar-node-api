@@ -40,7 +40,7 @@ def dockerLogin () {
 
 
 node {
-    def dockerImageTag = env.GIT_COMMIT
+    def dockerImageTag = "TEMPORAL_ID_${env.BUILD_ID}"//env.GIT_COMMIT
     def remoteImage = "${DOCKER_IMAGE_REPOSITORY_NAME}:${dockerImageTag}"
 
     try {
@@ -62,7 +62,7 @@ node {
             dockerLogin()
 
             docker.image('docker:27-cli').inside {
-                echo "Building and pushing Docker image ${remoteImage}"
+                echo "Building and pushing Docker image: ${remoteImage}"
 
                 sh """
                     docker build -t ${remoteImage} .
