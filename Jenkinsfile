@@ -59,9 +59,9 @@ node {
         }
 
         stage("Docker build and push") {
-            dockerLogin()
-
             docker.image('docker:27-cli').inside {
+                dockerLogin()
+
                 echo "Building and pushing Docker image: ${remoteImage}"
 
                 sh """
