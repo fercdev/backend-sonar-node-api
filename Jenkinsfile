@@ -3,7 +3,6 @@ def buildAndTest() {
     sh 'npm test'
 }
 
-
 node {
     try {
         docker.image('node:24-alpine').inside {
@@ -33,7 +32,7 @@ node {
                 echo "Pipeline completed successfully! from branch develop"
             }
         }
-    catch (Exception e) {
+    } catch (Exception e) {
         echo "Pipeline failed: ${e.message}"
         throw e
     } finally {
