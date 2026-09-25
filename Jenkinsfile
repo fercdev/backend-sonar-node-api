@@ -1,3 +1,3 @@
-@Library('codigo-shared-library')
+@Library('codigo-shared-library') _
 
 nodePipeline()
