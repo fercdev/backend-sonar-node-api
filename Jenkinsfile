@@ -96,10 +96,10 @@ node {
                     credentialsId: 'aws-credentials'
                 ]
             ]) {
-                docker.image('amazon/aws-cli').inside {
-                    withEnv([
-                        "AWS_DEFAULT_REGION=${AWS_REGION}"
-                    ]) {
+                withEnv([
+                    "AWS_DEFAULT_REGION=${AWS_REGION}"
+                ]) {
+                    docker.image('amazon/aws-cli').inside {
                         stage("Validate AWS credentials") {
                             sh "aws sts get-caller-identity"
                         }
