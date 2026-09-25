@@ -72,9 +72,9 @@ node {
         }
 
         stage("Promote Image to latest") {
-            dockerLogin()
-
             docker.image('docker:27-cli').inside {
+                dockerLogin()
+
                 stage("Pull Image") {
                     sh "docker pull ${remoteImage}"
                 }
