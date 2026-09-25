@@ -99,7 +99,7 @@ node {
                 withEnv([
                     "AWS_DEFAULT_REGION=${AWS_REGION}"
                 ]) {
-                    docker.image('amazon/aws-cli').inside {
+                    docker.image('amazon/aws-cli').inside('--entrypoint=""') {
                         stage("Validate AWS credentials") {
                             sh "aws sts get-caller-identity"
                         }
