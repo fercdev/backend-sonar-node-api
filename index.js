@@ -5,7 +5,7 @@ const PORT = 3000;
 
 app.get('/api/hello', (req, res) => {
     console.log('---INVOCANDO SERVICIO HELLO');
-    res.json({message: 'Hola mundo workflow!'});
+    res.json({message: 'Hola mundo Jenkins!'});
 })
 
 app.get('/api/message', (req, res) => {
