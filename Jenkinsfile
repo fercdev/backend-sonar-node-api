@@ -15,10 +15,21 @@
 //     runLint: false
 // )
 
-nodePipelineV5 {
+//closures anidados
+
+nodePipelineV6 {
     appName = 'sonar-api-node'
 
-    nodeImage = 'node:22-alpine'
-    
-    runLint = true
+    install {
+        command = 'npm ci'
+    }
+
+    lint {
+        enabled = true
+        command = 'npm run lint'
+    }
+
+    test {
+        command = 'npm test'
+    }
 }
