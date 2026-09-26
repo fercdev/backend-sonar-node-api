@@ -1,3 +1,7 @@
 @Library('codigo-shared-library') _
 
-nodePipelineV1()
+nodePipelineV2(
+    nodeImage: 'node:24-alpine',
+    installCommand: 'npm ci',
+    testCommand: 'npm test',
+)
