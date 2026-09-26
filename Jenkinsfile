@@ -18,18 +18,20 @@
 //closures anidados
 
 nodePipelineClosure {
-    appName = 'sonar-api-node'
+    docker {
+        image = 'node:24-alpine'
+    }
 
     install {
         command = 'npm ci'
     }
 
+    test {
+        command = 'npm test'
+    }
+
     lint {
         enabled = true
         command = 'npm run lint'
-    }
-
-    test {
-        command = 'npm test'
     }
 }
