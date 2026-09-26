@@ -17,7 +17,7 @@
 
 //closures anidados
 
-nodePipelineV6 {
+nodePipelineClosure {
     appName = 'sonar-api-node'
 
     install {
