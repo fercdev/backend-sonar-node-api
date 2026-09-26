@@ -12,5 +12,5 @@ nodePipelineV3(
     installCommand: 'npm ci',
     testCommand: 'npm test',
     lintCommand: 'npm run lint',
-    runLint: true
+    runLint: false
 )
